@@ -21,9 +21,10 @@
                 <div class="mb-5">
                     <x-input-label for="role" value="Role" />
                     <select id="role" name="role" class="mt-1.5 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-lg shadow-sm">
-                        <option value="staf" {{ old('role') == 'staf' ? 'selected' : '' }}>Staf</option>
-                        <option value="kabag" {{ old('role') == 'kabag' ? 'selected' : '' }}>Kepala Bagian</option>
-                        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+                        <option value="">— Pilih Role —</option>
+                        @foreach($roles as $slug => $name)
+                            <option value="{{ $slug }}" {{ old('role') == $slug ? 'selected' : '' }}>{{ $name }}</option>
+                        @endforeach
                     </select>
                     <x-input-error :messages="$errors->get('role')" class="mt-2" />
                 </div>

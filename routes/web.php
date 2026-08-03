@@ -6,6 +6,7 @@ use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\MasterSuratController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\SuratMasukController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('master-surat', MasterSuratController::class)->middleware('admin');
 
     Route::resource('menu', MenuController::class)->middleware('admin');
+    Route::resource('role', RoleController::class)->middleware('admin');
+    Route::get('role/{role}/menus', [RoleController::class, 'getMenus'])->name('role.get-menus')->middleware('admin');
+    Route::post('role/{role}/toggle-menu', [RoleController::class, 'toggleMenu'])->name('role.toggle-menu')->middleware('admin');
+    Route::post('role/{role}/toggle-menus-bulk', [RoleController::class, 'toggleMenusBulk'])->name('role.toggle-menus-bulk')->middleware('admin');
     Route::resource('jabatan', JabatanController::class)->middleware('admin');
 
     Route::get('surat-masuk/{suratMasuk}/disposisi', [DisposisiController::class, 'create'])->name('disposisi.create');

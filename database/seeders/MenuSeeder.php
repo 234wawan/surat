@@ -22,6 +22,7 @@ class MenuSeeder extends Seeder
             ['name' => 'Tambah User', 'icon' => 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z', 'route' => 'register', 'order' => 1, 'section' => 'Administrasi', 'roles' => ['admin']],
             ['name' => 'Jabatan', 'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', 'route' => 'jabatan.index', 'order' => 2, 'section' => 'Administrasi', 'roles' => ['admin']],
             ['name' => 'Menu Management', 'icon' => 'M4 6h16M4 12h16M4 18h16', 'route' => 'menu.index', 'order' => 3, 'section' => 'Administrasi', 'roles' => ['admin']],
+            ['name' => 'Role Management', 'icon' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', 'route' => 'role.index', 'order' => 4, 'section' => 'Administrasi', 'roles' => ['admin']],
         ];
 
         foreach ($menus as $item) {
