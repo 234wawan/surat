@@ -19,6 +19,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST_SAS }}
           username: ${{ secrets.SERVER_USER_SAS }}
           key: ${{ secrets.SSH_PRIVATE_KEY_SAS }}
+          port: 2026
           # Pastikan tidak ada spasi berlebih di awal baris script
           script: |
             cd /var/www/nama-folder-proyek-anda
